@@ -1,0 +1,8 @@
+.card {
+    background-color: dodgerblue;
+margin: 20px;
+
+}
+.display {
+    display: flex;
+}
