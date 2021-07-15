@@ -7,3 +7,21 @@ function Book(title,author,pages,read) {
         return `${title} by ${author}, ${pages} pages, ${read ? "read" : "not read yet"}`; 
     }
 }
+
+let myLibrary = [];
+
+function Book() {
+  // the constructor...
+}
+
+function addBookToLibrary(title,author,pages,read) {
+let bookToAdd=new Book(title,author,pages,read);
+myLibrary.push(bookToAdd);
+
+}
+
+function displayBooks(library) {
+    myLibrary.forEach(function(){
+
+    });
+}
