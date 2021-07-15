@@ -16,6 +16,7 @@ myLibrary.push(bookToAdd);
 }
 
 addBookToLibrary("Candide","Voltaire",129,false);
+addBookToLibrary("The Prince","Niccolo Machiavelli",140,true);
 
 function displayBooks() {
     myLibrary.forEach(function(elem){
