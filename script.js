@@ -17,6 +17,8 @@ myLibrary.push(bookToAdd);
 
 addBookToLibrary("Candide","Voltaire",129,false);
 addBookToLibrary("The Prince","Niccolo Machiavelli",140,true);
+addBookToLibrary("Altered Carbon","Richard K. Morgan",375,true);
+addBookToLibrary("The Hitchhiker's Guide to the Galaxy","Douglas Adams",193,true);
 
 function displayBooks() {
     myLibrary.forEach(function(elem){
