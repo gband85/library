@@ -25,6 +25,10 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function displayBooks() {
+    //remove all chil
+   while (display.firstChild) {
+       display.removeChild(display.firstChild);
+   }
     myLibrary.forEach(function (elem) {
         console.log(elem);
         //create card element
@@ -33,6 +37,8 @@ function displayBooks() {
         card.classList.add("card");
         //add book data
         card.textContent = elem.info();
+        //set data-index to element index
+        card.setAttribute("data-index",`${myLibrary.indexOf(elem)}`);
         //append to display
         display.appendChild(card);
     });
