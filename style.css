@@ -11,6 +11,7 @@ form {
     flex-direction: column;
 }
 fieldset {
+    /*display form vertically*/
     display: flex;
     flex-direction: column;
 }
