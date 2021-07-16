@@ -13,21 +13,21 @@
     <form id="book-form">
         <fieldset>
             <label> Title
-                <input type="text" name="" id="">
+                <input type="text" name="title" id="title">
             </label>
             <label> Author
-                <input type="text" name="" id="">
+                <input type="text" name="author" id="author">
             </label>
             <label> Pages
-                <input type="number" name="" id="">
+                <input type="number" name="pages" id="pages">
             </label>
             <label>
-                <input type="radio" name="read" id="" value="read it"> Read It
-                <input type="radio" name="read" id="" value="not yet" checked> Not Yet
+                <input type="radio" name="read" id="read" value="true"> Read It
+                <input type="radio" name="read" id="read" value="false" checked> Not Yet
             </label>
         </fieldset>
         <fieldset>
-            <input type="submit" name="submit" value="Submit">
+            <button name="submit" id="submit" form="book-form">Submit</button>
         </fieldset>
     </form>
     <div class="display"></div>
