@@ -5,7 +5,7 @@ let bookForm = document.querySelector("#book-form");
 let title = document.querySelector("#title");
 let author = document.querySelector("#author");
 let pages = document.querySelector("#pages");
-let read = document.querySelector("#read");
+let readRadios = document.getElementsByName("read");
 let tbody = document.querySelector("tbody")
 
 function Book(title, author, pages, read) {
