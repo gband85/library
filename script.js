@@ -12,9 +12,9 @@ function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read ? "read" : "not read yet";
+    this.read = read;
     this.info = function () {
-        return `${title} by ${author}, ${pages} pages, ${read ? "read" : "not read yet"}`;
+        return `${title} by ${author}, ${pages} pages, ${read}`;
     }
 }
 
@@ -37,9 +37,18 @@ function displayBooks() {
         for (let str of Object.values(elem)) {
             //only add properties, not methods
             if (typeof (str) != "function") {
-                //create data cell
-                let cell = document.createElement("td");
+//create data cell
+let cell = document.createElement("td");
+                if (str == "read" || str == "not yet") {
+                    //create button
+let readBtn=document.createElement("button");
+readBtn.textContent=str;
+//append to cell
+cell.appendChild(readBtn);
+                }
+                    else {
                 cell.textContent = str;
+                    }
                 //append to row
                 row.appendChild(cell);
             }
@@ -60,8 +69,8 @@ bookForm.addEventListener("submit", function (e) {
     displayBooks();
 })
 
-addBookToLibrary("Candide", "Voltaire", 129, false);
-addBookToLibrary("The Prince", "Niccolo Machiavelli", 140, true);
-addBookToLibrary("Altered Carbon", "Richard K. Morgan", 375, true);
-addBookToLibrary("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", 193, true);
+addBookToLibrary("Candide", "Voltaire", 129, "not yet");
+addBookToLibrary("The Prince", "Niccolo Machiavelli", 140, "read");
+addBookToLibrary("Altered Carbon", "Richard K. Morgan", 375, "read");
+addBookToLibrary("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", 193, "read");
 displayBooks();
