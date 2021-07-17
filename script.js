@@ -6,7 +6,8 @@ let title = document.querySelector("#title");
 let author = document.querySelector("#author");
 let pages = document.querySelector("#pages");
 let readRadios = document.getElementsByName("read");
-let tbody = document.querySelector("tbody")
+let tbody = document.querySelector("tbody");
+//let readButtons = document.querySelectorAll()
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -42,6 +43,7 @@ function displayBooks() {
                 if (str == "read" || str == "not yet") {
                     //create button
                     let readBtn = document.createElement("button");
+                    readBtn.classList.add("read-btn");
                     readBtn.textContent = str;
                     //append to cell
                     cell.appendChild(readBtn);
