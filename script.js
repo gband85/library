@@ -37,18 +37,18 @@ function displayBooks() {
         for (let str of Object.values(elem)) {
             //only add properties, not methods
             if (typeof (str) != "function") {
-//create data cell
-let cell = document.createElement("td");
+                //create data cell
+                let cell = document.createElement("td");
                 if (str == "read" || str == "not yet") {
                     //create button
-let readBtn=document.createElement("button");
-readBtn.textContent=str;
-//append to cell
-cell.appendChild(readBtn);
+                    let readBtn = document.createElement("button");
+                    readBtn.textContent = str;
+                    //append to cell
+                    cell.appendChild(readBtn);
                 }
-                    else {
-                cell.textContent = str;
-                    }
+                else {
+                    cell.textContent = str;
+                }
                 //append to row
                 row.appendChild(cell);
             }
@@ -63,8 +63,13 @@ cell.appendChild(readBtn);
 bookForm.addEventListener("submit", function (e) {
     //prevent default submit action
     e.preventDefault();
-    //add to library
-    addBookToLibrary(title.value, author.value, Number(pages.value), read.value);
+    for (let i = 0; i < readRadios.length; i++) {
+        //use value of checked radio in function
+        if (readRadios[i].checked) {
+            //add to library
+            addBookToLibrary(title.value, author.value, Number(pages.value), readRadios[i].value);
+        }
+    }
     //display array with new book
     displayBooks();
 })
