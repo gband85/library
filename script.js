@@ -6,6 +6,7 @@ let title = document.querySelector("#title");
 let author = document.querySelector("#author");
 let pages = document.querySelector("#pages");
 let read = document.querySelector("#read");
+let tbody = document.querySelector("tbody")
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -25,22 +26,28 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function displayBooks() {
-    //remove all chil
-   while (display.firstChild) {
-       display.removeChild(display.firstChild);
-   }
+    //remove all child nodes
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
     myLibrary.forEach(function (elem) {
-        console.log(elem);
-        //create card element
-        let card = document.createElement("div");
-        //add class
-        card.classList.add("card");
-        //add book data
-        card.textContent = elem.info();
+        //create table row
+        let row = document.createElement("tr");
+        //iterate through object values
+        for (let str of Object.values(elem)) {
+            //only add properties, not methods
+            if (typeof (str) != "function") {
+                //create data cell
+                let cell = document.createElement("td");
+                cell.textContent = str;
+                //append to row
+                row.appendChild(cell);
+            }
+        }
         //set data-index to element index
-        card.setAttribute("data-index",`${myLibrary.indexOf(elem)}`);
+        row.setAttribute("data-index", `${myLibrary.indexOf(elem)}`);
         //append to display
-        display.appendChild(card);
+        tbody.appendChild(row);
     });
 }
 
@@ -49,6 +56,8 @@ bookForm.addEventListener("submit", function (e) {
     e.preventDefault();
     //add to library
     addBookToLibrary(title.value, author.value, Number(pages.value), read.value);
+    //display array with new book
+    displayBooks();
 })
 
 addBookToLibrary("Candide", "Voltaire", 129, false);
