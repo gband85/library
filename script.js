@@ -1,4 +1,29 @@
-let myLibrary = [];
+ let myLibrary = [
+    {
+        "title": "Candide",
+        "author": "Voltaire",
+        "pages": 129,
+        "read": "read"
+      },
+      {
+        "title": "The Prince",
+        "author": "Niccolo Machiavelli",
+        "pages": 140,
+        "read": "read"
+      },
+      {
+        "title": "Altered Carbon",
+        "author": "Richard K. Morgan",
+        "pages": 375,
+        "read": "not read"
+      },
+      {
+        "title": "The Hitchhiker's Guide to the Galaxy",
+        "author": "Douglas Adams",
+        "pages": 193,
+        "read": "read"
+      }
+];
 let display = document.querySelector(".display");
 let newBook = document.querySelector("#new-book");
 let bookForm = document.querySelector("#book-form");
@@ -7,7 +32,7 @@ let author = document.querySelector("#author");
 let pages = document.querySelector("#pages");
 let readRadios = document.getElementsByName("read");
 let tbody = document.querySelector("tbody");
-//let readButtons = document.querySelectorAll()
+let readButtons=document.querySelectorAll(".read-btn");;
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -40,11 +65,12 @@ function displayBooks() {
             if (typeof (str) != "function") {
                 //create data cell
                 let cell = document.createElement("td");
-                if (str == "read" || str == "not yet") {
+                if (str == "read" || str == "not read") {
                     //create button
                     let readBtn = document.createElement("button");
                     readBtn.classList.add("read-btn");
-                    readBtn.textContent = str;
+                        readBtn.textContent=str;
+                        readBtn.value=str;                    
                     //append to cell
                     cell.appendChild(readBtn);
                 }
@@ -60,6 +86,17 @@ function displayBooks() {
         //append to display
         tbody.appendChild(row);
     });
+    //readButtons = document.querySelectorAll(".read-btn");
+    console.log(readButtons);
+}
+
+function switchStatus(status) {
+if (status=="read") {
+    return "not read";
+}
+else {
+    return "read";
+}
 }
 
 bookForm.addEventListener("submit", function (e) {
@@ -76,8 +113,23 @@ bookForm.addEventListener("submit", function (e) {
     displayBooks();
 })
 
-addBookToLibrary("Candide", "Voltaire", 129, "not yet");
-addBookToLibrary("The Prince", "Niccolo Machiavelli", 140, "read");
-addBookToLibrary("Altered Carbon", "Richard K. Morgan", 375, "read");
-addBookToLibrary("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", 193, "read");
-displayBooks();
+function createBtnListeners(){
+readButtons.forEach(function(readButton){
+readButton.addEventListener("click",function(){
+    //switch status with function
+    let newStatus=switchStatus(readButton.value);
+    console.log(newStatus);    
+readButton.textContent=newStatus;
+readButton.value=newStatus;
+})
+})
+}
+
+
+window.onload=function() {
+    displayBooks();
+}
+// addBookToLibrary("Candide", "Voltaire", 129, "read");
+// addBookToLibrary("The Prince", "Niccolo Machiavelli", 140, "read");
+// addBookToLibrary("Altered Carbon", "Richard K. Morgan", 375, "not read");
+// addBookToLibrary("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", 193, "read");
