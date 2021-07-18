@@ -1,28 +1,28 @@
- let myLibrary = [
+let myLibrary = [
     {
         "title": "Candide",
         "author": "Voltaire",
         "pages": 129,
         "read": "read"
-      },
-      {
+    },
+    {
         "title": "The Prince",
         "author": "Niccolo Machiavelli",
         "pages": 140,
         "read": "read"
-      },
-      {
+    },
+    {
         "title": "Altered Carbon",
         "author": "Richard K. Morgan",
         "pages": 375,
         "read": "not read"
-      },
-      {
+    },
+    {
         "title": "The Hitchhiker's Guide to the Galaxy",
         "author": "Douglas Adams",
         "pages": 193,
         "read": "read"
-      }
+    }
 ];
 let display = document.querySelector(".display");
 let newBook = document.querySelector("#new-book");
@@ -69,8 +69,8 @@ function displayBooks() {
                     //create button
                     let readBtn = document.createElement("button");
                     readBtn.classList.add("read-btn");
-                        readBtn.textContent=str;
-                        readBtn.value=str;                    
+                    readBtn.textContent = str;
+                    readBtn.value = str;
                     //append to cell
                     cell.appendChild(readBtn);
                 }
@@ -94,12 +94,24 @@ function displayBooks() {
 }
 
 function switchStatus(status) {
-if (status=="read") {
-    return "not read";
+    if (status == "read") {
+        return "not read";
+    }
+    else {
+        return "read";
+    }
 }
-else {
-    return "read";
-}
+
+function createBtnListeners() {
+    readButtons.forEach(function (readButton) {
+        readButton.addEventListener("click", function () {
+            //switch status with function
+            let newStatus = switchStatus(readButton.value);
+            console.log(newStatus);
+            readButton.textContent = newStatus;
+            readButton.value = newStatus;
+        })
+    })
 }
 
 bookForm.addEventListener("submit", function (e) {
@@ -116,23 +128,10 @@ bookForm.addEventListener("submit", function (e) {
     displayBooks();
 })
 
-function createBtnListeners(){
-readButtons.forEach(function(readButton){
-readButton.addEventListener("click",function(){
-    //switch status with function
-    let newStatus=switchStatus(readButton.value);
-    console.log(newStatus);    
-readButton.textContent=newStatus;
-readButton.value=newStatus;
-})
-})
-}
+window.onload = function () {
 
-
-window.onload=function() {
-    
     displayBooks();
-   
+
 }
 // addBookToLibrary("Candide", "Voltaire", 129, "read");
 // addBookToLibrary("The Prince", "Niccolo Machiavelli", 140, "read");
