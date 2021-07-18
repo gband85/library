@@ -21,3 +21,15 @@ table {
 th,td {
     border-bottom: 1px solid black;
 }
+#book-form {
+    /* visibility: hidden; */
+    /* position: absolute; */
+    /* display: none; */
+    
+}
+#form-div {
+    position: absolute;
+    display: none;
+    background-color: brown;
+    padding: 40px;
+}
