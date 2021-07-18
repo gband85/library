@@ -32,7 +32,7 @@ let author = document.querySelector("#author");
 let pages = document.querySelector("#pages");
 let readRadios = document.getElementsByName("read");
 let tbody = document.querySelector("tbody");
-let readButtons=document.querySelectorAll(".read-btn");;
+let readButtons;
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -86,8 +86,11 @@ function displayBooks() {
         //append to display
         tbody.appendChild(row);
     });
-    //readButtons = document.querySelectorAll(".read-btn");
+    //update var
+    readButtons = document.querySelectorAll(".read-btn");
     console.log(readButtons);
+    //create listeners for read buttons
+    createBtnListeners();
 }
 
 function switchStatus(status) {
@@ -127,7 +130,9 @@ readButton.value=newStatus;
 
 
 window.onload=function() {
+    
     displayBooks();
+   
 }
 // addBookToLibrary("Candide", "Voltaire", 129, "read");
 // addBookToLibrary("The Prince", "Niccolo Machiavelli", 140, "read");
