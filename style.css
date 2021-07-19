@@ -4,7 +4,9 @@ margin: 20px;
 
 }
 .display {
-    display: flex;
+    /* display: flex; */
+    justify-self: unset;
+    align-self: unset;
 }
 form {
     display: flex;
@@ -27,9 +29,23 @@ th,td {
     /* display: none; */
     
 }
-#form-div {
+#form-modal {
     position: absolute;
+    left: 0;
+    top: 0;
     display: none;
     background-color: brown;
     padding: 40px;
+z-index: 3;
+}
+label {
+    padding: 20px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* justify-items: center; */
+    height: 900px;
 }
