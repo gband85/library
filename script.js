@@ -27,6 +27,7 @@ let myLibrary = [
 let display = document.querySelector(".display");
 let newBook = document.querySelector("#new-book");
 let bookForm = document.querySelector("#book-form");
+let formModal=document.querySelector("#form-modal");
 let title = document.querySelector("#title");
 let author = document.querySelector("#author");
 let pages = document.querySelector("#pages");
@@ -126,6 +127,10 @@ bookForm.addEventListener("submit", function (e) {
     }
     //display array with new book
     displayBooks();
+})
+
+newBook.addEventListener("click", function() {
+    formModal.style.display="block";
 })
 
 window.onload = function () {
