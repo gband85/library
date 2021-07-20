@@ -34,6 +34,7 @@ let pages = document.querySelector("#pages");
 let readRadios = document.getElementsByName("read");
 let tbody = document.querySelector("tbody");
 let readButtons;
+let closeBtn = document.querySelector(".close-btn");
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -125,12 +126,16 @@ bookForm.addEventListener("submit", function (e) {
             addBookToLibrary(title.value, author.value, Number(pages.value), readRadios[i].value);
         }
     }
+    formModal.style.display="none";
     //display array with new book
     displayBooks();
 })
 
 newBook.addEventListener("click", function() {
     formModal.style.display="block";
+})
+closeBtn.addEventListener("click", function() {
+    formModal.style.display="none";
 })
 
 window.onload = function () {
