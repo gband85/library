@@ -22,6 +22,7 @@ table {
 }
 th,td {
     border-bottom: 1px solid black;
+    padding: 10px;
 }
 #book-form {
     /* visibility: hidden; */
@@ -48,4 +49,9 @@ main {
     justify-content: center;
     /* justify-items: center; */
     height: 900px;
+}
+.close-btn {
+    align-self: flex-end;
+    cursor: pointer;
+    font-size: 32px;
 }
