@@ -11,28 +11,34 @@
 <body>
     <main>
     <div id="form-modal">
+        <div class="modal-header">
+            <span class="close-btn">&times;</span>
+        </div>
+        <div class="modal-content">
 
     <form id="book-form">
-        <span class="close-btn">&times;</span>
+        
         <fieldset>
-            <label> Title
+            <label> Title</label>
                 <input type="text" name="title" id="title" required>
-            </label>
-            <label> Author
+            
+            <label> Author</label>
                 <input type="text" name="author" id="author" required>
-            </label>
-            <label> Pages
+            
+            <label> Pages</label>
                 <input type="number" name="pages" id="pages" min="1" required>
-            </label>
+            
             <label>
                 <input type="radio" name="read" id="read1" value="read"> Read It
-                <input type="radio" name="read" id="read2" value="not read" checked> Not Yet
+                <input type="radio" name="read" id="read2" value="not read"> Not Yet
             </label>
         </fieldset>
         <fieldset>
             <button name="submit" id="submit" form="book-form">Submit</button>
         </fieldset>
     </form>
+</div>
+
         </div>
 
     <div class="display">
