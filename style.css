@@ -11,10 +11,12 @@ margin: 20px;
 form {
     display: flex;
     flex-direction: column;
+    /* border: none; */
 }
 fieldset {
     /*display form vertically*/
     display: flex;
+    border: none;
     flex-direction: column;
 }
 table {
@@ -24,34 +26,44 @@ th,td {
     border-bottom: 1px solid black;
     padding: 10px;
 }
-#book-form {
-    /* visibility: hidden; */
-    /* position: absolute; */
-    /* display: none; */
-    
-}
-#form-modal {
+.form-modal {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 40%;
+    top: 70;
     display: none;
     background-color: brown;
     padding: 40px;
 z-index: 3;
-}
-label {
-    padding: 20px;
+flex-direction: column;
+/* -webkit-animation-name: animatetop;
+-webkit-animation-duration: 0.4s;
+animation-name: animatetop;
+animation-duration: 0.4s */
 }
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    /* justify-items: center; */
     height: 900px;
 }
 .close-btn {
-    align-self: flex-end;
+/* float: right; */
     cursor: pointer;
     font-size: 32px;
+    /* width: 100px; */
 }
+.modal-header {
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    align-items: flex-end;
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
