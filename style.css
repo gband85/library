@@ -1,3 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html {
+    line-height: 1.7em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#title,#author {
+    /* height: 32px; */
+    font-size: 20px;
+    /* line-height: 1.7em; */
+    margin-bottom: 20px;
+}
+
 .card {
     background-color: dodgerblue;
 margin: 20px;
@@ -12,6 +29,7 @@ form {
     display: flex;
     flex-direction: column;
     /* border: none; */
+    width: 200px;
 }
 fieldset {
     /*display form vertically*/
@@ -32,9 +50,11 @@ th,td {
     top: 70;
     display: none;
     background-color: brown;
-    padding: 40px;
+    /* padding: 10px; */
 z-index: 3;
 flex-direction: column;
+padding: 20px;
+/* width: 270px; */
 /* -webkit-animation-name: animatetop;
 -webkit-animation-duration: 0.4s;
 animation-name: animatetop;
@@ -47,17 +67,53 @@ main {
     height: 900px;
 }
 .close-btn {
+    align-self: flex-end;
 /* float: right; */
     cursor: pointer;
     font-size: 32px;
     /* width: 100px; */
+    /* margin-top: 16px;
+    margin-bottom: 16px; */
 }
 .modal-header {
     display: flex;
-    align-content: flex-end;
+    justify-content: space-between;
+    /* margin-bottom: 20px; */
+    /* align-items: ; */
+    /* align-content: flex-end;
     justify-content: flex-end;
+    
     justify-items: flex-end;
     align-items: flex-end;
+    flex-direction: row-reverse; */
+}
+
+/* .modal-content {
+    padding-left: 20px;
+    padding-right:  20px;
+} */
+
+#pages {
+    width: 30%;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+fieldset {
+    margin-top: 20px;
+}
+
+ input[type="text"] {
+     width: 200px;
+    /* font-size:24px; */
+} 
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#submit {
+    font-size: 18px;
+    padding: 10px 10px ;
 }
 
 @-webkit-keyframes animatetop {
