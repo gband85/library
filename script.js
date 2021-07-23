@@ -67,7 +67,9 @@ function displayBooks() {
             if (typeof (str) != "function") {
                 //create data cell
                 let cell = document.createElement("td");
+                
                 if (str == "read" || str == "not read") {
+                    cell.classList.add("readCell");
                     //create button
                     let readBtn = document.createElement("button");
                     readBtn.classList.add("read-btn");
