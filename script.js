@@ -36,12 +36,15 @@ let tbody = document.querySelector("tbody");
 let readButtons;
 let closeBtn = document.querySelector(".close-btn");
 
-function Book(title, author, pages, read) {
+class Book {
+    constructor(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function () {
+    }
+    
+    info() {
         return `${title} by ${author}, ${pages} pages, ${read}`;
     }
 }
