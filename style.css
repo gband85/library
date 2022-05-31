@@ -16,7 +16,7 @@ main {
 .form-modal {
     position: absolute;
     left: 40%;
-    top: 70;
+    top: 70px;
     display: none;
     background-color: brown;
     /* padding: 10px; */
@@ -121,8 +121,8 @@ flex-direction: unset;
 
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
+    to {top:70px; opacity:1}
   }@keyframes animatetop {
     from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+    to {top:70px; opacity:1}
   }
